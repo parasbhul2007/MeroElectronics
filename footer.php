@@ -15,7 +15,7 @@
             <h4>Contact</h4>
             <p>Kathmandu, Nepal</p>
             <p>info@meroelectronics.com</p>
-            <p>+977-9800000000</p>
+            <p>+977-9700000000</p>
         </div>
     </div>
     <div class="footer-bottom">

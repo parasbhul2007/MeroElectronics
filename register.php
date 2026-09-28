@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($name === "" || $email === "" || $password === "") {
         $error = "Please fill all required fields.";
     } else {
-        // Check if email already exists
+       
         $stmt = $conn->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();

@@ -1,5 +1,4 @@
 <?php
-// header.php expects connection.php to already be included by the parent page
 $cart_count = 0;
 if (isset($_SESSION['user_id'])) {
     $uid = $_SESSION['user_id'];

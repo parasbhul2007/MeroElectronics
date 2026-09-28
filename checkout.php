@@ -28,7 +28,7 @@ if (count($items) === 0) {
     exit();
 }
 
-// Fetch user's saved address as default
+
 $user_stmt = $conn->prepare("SELECT address, phone FROM users WHERE id = ?");
 $user_stmt->bind_param("i", $uid);
 $user_stmt->execute();

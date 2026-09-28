@@ -14,7 +14,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $uid = $_SESSION['user_id'];
 $shipping_address = trim($_POST['shipping_address']);
 
-// Get cart items
 $stmt = $conn->prepare("SELECT cart.product_id, cart.quantity, products.price, products.stock
                          FROM cart JOIN products ON cart.product_id = products.id
                          WHERE cart.user_id = ?");
@@ -34,7 +33,7 @@ if (count($items) === 0) {
     exit();
 }
 
-// Start transaction so order + items + stock update all succeed or all fail together
+
 $conn->begin_transaction();
 
 try {
@@ -54,7 +53,7 @@ try {
         $stock_stmt->execute();
     }
 
-    // Clear the cart
+    
     $clear_stmt = $conn->prepare("DELETE FROM cart WHERE user_id = ?");
     $clear_stmt->bind_param("i", $uid);
     $clear_stmt->execute();

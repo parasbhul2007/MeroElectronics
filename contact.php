@@ -3,8 +3,6 @@ include 'connection.php';
 $sent = false;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // For a college project, we simply acknowledge the message.
-    // In a real system this would be saved to a "messages" table or emailed.
     $sent = true;
 }
 include 'header.php';

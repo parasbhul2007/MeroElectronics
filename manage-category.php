@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 $error = "";
 $success = "";
 
-// Delete category
+
 if (isset($_GET['delete'])) {
     $del_id = (int)$_GET['delete'];
     $conn->query("DELETE FROM category WHERE id = $del_id");
@@ -17,7 +17,7 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-// Add category
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['name'])) {
     $name = trim($_POST['name']);
     if ($name === "") {

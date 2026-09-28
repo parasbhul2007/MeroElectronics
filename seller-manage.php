@@ -12,7 +12,7 @@ $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    /* Delete category */
+    
     if (isset($_POST['delete_category'])) {
         $category_id = (int)$_POST['category_id'];
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    /* Edit category */
+  
     if (isset($_POST['edit_category'])) {
         $category_id = (int)$_POST['category_id'];
         $category_name = trim($_POST['category_name']);
@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    /* Delete product */
+   
     if (isset($_POST['delete_product'])) {
         $product_id = (int)$_POST['product_id'];
 
@@ -92,7 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    /* Edit product */
     if (isset($_POST['edit_product'])) {
         $product_id = (int)$_POST['product_id'];
         $name = trim($_POST['name']);

@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-// Admin-only guard
+
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit();
@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
 $error = "";
 $success = "";
 
-// Handle delete
+
 if (isset($_GET['delete'])) {
     $del_id = (int)$_GET['delete'];
     $conn->query("DELETE FROM products WHERE id = $del_id");
@@ -18,7 +18,7 @@ if (isset($_GET['delete'])) {
     exit();
 }
 
-// Handle add product
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = trim($_POST['name']);
     $description = trim($_POST['description']);
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $category_id = (int)$_POST['category_id'];
     $image_name = 'no-image.png';
 
-    // Handle image upload
+  
     if (isset($_FILES['image']) && $_FILES['image']['error'] === 0) {
         $ext = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
         $image_name = 'product_' . time() . '.' . $ext;

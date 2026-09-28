@@ -10,7 +10,6 @@ $order_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $uid = $_SESSION['user_id'];
 $is_admin = ($_SESSION['role'] === 'admin');
 
-// Admins can view any order, customers only their own
 if ($is_admin) {
     $stmt = $conn->prepare("SELECT * FROM orders WHERE id = ?");
     $stmt->bind_param("i", $order_id);
